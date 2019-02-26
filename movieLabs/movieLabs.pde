@@ -6,6 +6,7 @@ import java.util.Scanner;
 import java.io.File;
 import java.util.Collections;
 import static java.lang.System.*;
+
 PImage oscar=new PImage();
 PImage closeEn=new PImage();
 PImage openEn=new PImage();
@@ -13,6 +14,7 @@ int clicks;
 Text t=new Text();
 String typed;
 MovieList m=new MovieList();
+Scanner scan;
 
 void setup() {
   oscar=loadImage("oscar.jpg");
@@ -20,7 +22,7 @@ void setup() {
   openEn=loadImage("open.png");
   size(1500, 968);
   try {
-    Scanner scan=new Scanner(new File("Desktop/movieLabs/movieReviews.txt"));
+    scan=new Scanner(new File("Desktop/movieLabs/movieReviews.txt"));
     int siz=scan.nextInt();
     scan.nextLine();
     while (scan.hasNext()) {
@@ -44,6 +46,7 @@ void draw() {
     t.displayText();
     println(t.getText());
     typed=t.getText();
+    
   }
 }
 
@@ -56,10 +59,13 @@ void scene1() {
   image(closeEn, (width/2)-479, (height/2)-450);
 }
 void scene2() {
+  Data getData=new Data(m); //qhy isn't this working? Data does take a MovieList
   image(openEn, (width/2)-449, (height/2)-413.5);
   textSize(50);
   fill(160, 36, 17);
   text("and the award goes to...", 433, 250);
+  getData.drawIt();
+  
 }
 void keyPressed() {
   if (isLetter(keyCode)) {
