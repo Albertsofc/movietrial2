@@ -59,7 +59,8 @@ void scene1() {
   image(closeEn, (width/2)-479, (height/2)-450);
 }
 void scene2() {
-  Data getData=new Data(m); //qhy isn't this working? Data does take a MovieList
+  Data getData=new Data(m); //why isn't this working? Data does take a MovieList
+  getData.search(t.getText());
   image(openEn, (width/2)-449, (height/2)-413.5);
   textSize(50);
   fill(160, 36, 17);
