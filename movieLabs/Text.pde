@@ -31,9 +31,10 @@ public class Text {
   String getText() {
     return Text;
   }
-}
+
 String findInMovie() {
   int number=0;
 
   return ""+number;
+}
 }
