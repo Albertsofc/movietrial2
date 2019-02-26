@@ -1,17 +1,18 @@
 int count1, count2, count3, count4, count0;
-
+MovieList ex=new MovieList();
 public class Data {
-  void Data() {
+  void Data(MovieList m) {
+    ex=m;
   }
   void searched(String in) {
-    ArrayList searchedArray=new ArrayList();
-    for (Movie m : MovieList) {
+    ArrayList<Movie> searchedArray=new ArrayList<Movie>();
+    for (Movie m : ex) { //how do I loop through this? Ideally i'm looping through the original list that was sent in
       if (m.getReview().contains(in)) {
         searchedArray.add(m);
       }
     }
     for(int i=0;i<searchedArray.size();i++){
-      if(searchedArray.get(i).getRating()==4){ //why doesn't this work? it's an array of movie objects?
+      if(searchedArray.get(i).getRating()==4){ 
           count4++;
       } 
       else if(searchedArray.get(i).getRating()==3){
@@ -29,12 +30,17 @@ public class Data {
     }
   }
   void drawIt() {
+    textSize(40);
+    rect(460,627,50,(count0*5)); //count0
+    text("0",460,673);
+    rect(460,627,50,(count1*5)); //count1
+    text("1",460,673);
+    rect(460,627,50,(count2*5)); //count2
+    text("2",460,673);
+    rect(460,627,50,(count3+5)); //count3
+    text("3",460,673);
+    rect(460,627,50,(count4*5)); //count4
+    text("4",460,673);
     
-  }
-
-  void loopThrough(List MovieList) {
-    for (Movie m : MovieList) {
-      if m.getRating
-    }
   }
 }
